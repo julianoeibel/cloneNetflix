@@ -104,6 +104,14 @@ header nav a:hover {
     display: block;
     
 }
+
+.item {
+    cursor: pointer;
+    
+}
+
+/* Carrosel */
+
 .carrosel-series {
     margin-top: -5%;
     background: rgb(241,241,241);
@@ -135,6 +143,87 @@ header nav a:hover {
 
 .carrosel-filmes {
     margin-top: 50px;
+}
+
+/*iframes */
+
+.overlay {
+    height: 0%;
+    width: 120%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .4);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+.overlay.open {
+    height: 120%;    
+    opacity: 1;
+    z-index: 2;
+}
+
+.iframe {
+    background-color: #FFF;
+    border-radius: 10px;
+    width: 65%;
+    padding: 25px;
+    position: fixed;
+    top: 50%;
+    left: -100%;
+    transform: translate(-50%, -50%);
+    transition: all .5s ease-in-out;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    color: #141414;
+}
+
+.iframe.open {
+    z-index: 3;
+    left: 50%;
+}
+
+.iframe_avatar {
+    position: relative;
+    width: 35%;
+    float: left;
+    border-right: 1px solid #F4F4F4;
+}
+
+.iframe_close {
+    float: right;
+    cursor: pointer;
+    font-size: 2.5em;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    z-index: 3;
+
+}
+
+.iframe_close:hover {
+    color: #017F22;
+}
+
+.iframe_avatar img {
+    width: 100%;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.iframe_info {
+    position: relative;
+    float: right;
+    width: 65%;
+    padding: 20px;
+    text-align: justify;
+}
+
+.iframe_info p {
+    margin-bottom: 10px;
+    font-size: 90%;
 }
 
 /* Medias queries */
