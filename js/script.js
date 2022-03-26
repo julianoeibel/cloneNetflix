@@ -72,6 +72,7 @@ $('.iframe_close').on('click', function() {
 
 $('.overlay').on('click', function() {
     $('.iframe').removeClass('open');
+    $('.iframe-filmes').removeClass('open');
     $('.overlay').removeClass('open');
     $('.menu').removeClass('open');
 });

@@ -22,7 +22,7 @@ body {
 header .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:flex-start; 
     
 }
 
@@ -31,21 +31,133 @@ header .logo {
     font-family: 'Arial Black';
     font-size: 40px;
 }
+header nav {
+    margin-left: 30px;
+}
 
 header nav a {
     text-decoration: none;
-    color: #aaa;
+    color: #fff;
     margin-right: 10px;
 
 }
 
 header nav a:hover {
-    color: #fff
+    color: #aaa
+}
+
+/*Select Profile*/
+
+.container { 
+    width: 95%;
+    margin: 0 auto;
+}
+
+header {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 68px;
+}
+
+#logo {
+    position: relative;
+    float: left;
+    width: 115px;
+}
+
+.selectProfile {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--preto);
+
+}
+
+.listProfile {
+    position: absolute;
+    width: 45%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.listProfile h1 {
+    position: relative;
+    float: left;
+    text-align: center;
+    width: 100%;
+    color: #ffff;
+    margin-bottom: 50px;
+    font-size: 3.5vw;
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: unset;
+}
+
+.escolherPerfil {
+    position: relative;
+    float: left;
+    width: 100%;
+    text-align: center;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.escolherPerfil li {
+    width: 90%;
+    cursor: pointer;
+}
+
+.escolherPerfil li:last-child {
+    margin: 0;
+}
+
+.profileImg {
+    width: 100%;
+    position: relative;
+    border: solid 3px transparent;
+}
+
+.profileImg:hover {
+    border: solid 3px #f1f1f1;
+}
+
+.profileImg:hover ~.nomeProfile {
+    color: #f1f1f1;
+}
+
+.nomeProfile { 
+    position: relative;
+    float: left;
+    width: 100%;
+    color: grey;
+    margin: .6em 0;
+    font-size: 1.3vw;
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+
+#gerenciarPerfis {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+/*main*/
+
+main {
+    
 }
 
 /* filme principal */
 
 .filme-principal {
+    width: 100%;
     font-size: 16px;
     background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), url('../img/umbrellaacademy.jpg');
     height: 600px;
@@ -116,20 +228,26 @@ header nav a:hover {
     transition: 0.5s ease all;
     z-index: 999;
     box-shadow: 1px 2px 23px 2px rgba(255,255,255,0.72);
--webkit-box-shadow: 1px 2px 23px 2px rgba(255,255,255,0.72);
--moz-box-shadow: 1px 2px 23px 2px rgba(255,255,255,0.72);
+    -webkit-box-shadow: 1px 2px 23px 2px rgba(255,255,255,0.72);
+    -moz-box-shadow: 1px 2px 23px 2px rgba(255,255,255,0.72);
 }
 
 /* Carrosel */
 
+.carrosel {
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+
 .carrosel-series {
+    overflow: hidden;
     margin-top: -5%;
     background: rgb(241,241,241);
     background: linear-gradient(180deg, rgba(241,241,241,0) 0%, rgba(20,20,20,1) 19%);
 }
 
 .titulo-carrosel {
-    
+    margin-bottom: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -139,25 +257,26 @@ header nav a:hover {
 
 .owl-prev {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: -1.5%;
-    
+    transform: translate(-50%,-50%);
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
 }
 
 .owl-next {
     position: absolute;
-    top: 40%;
+    top: 50%;
+    transform: translate(-50%,-50%);
     right: -1.5%;
-   
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
 }
 
-.carrosel-filmes {
-    margin-top: 50px;
-}
-
-.owl-carousel, .owl-stage-outer {
-    padding-top: 15px;
-}
 
 /*iframes */
 
@@ -182,17 +301,21 @@ header nav a:hover {
 .iframe, .iframe-filmes {
     background-color: rgba(0,0,0,.50);
     border-radius: 10px;
-    width: 65%;
-    padding: 25px;
+    width: 630px;
+    padding: 35px;
     position: fixed;
     top: 50%;
     left: -100%;
     transform: translate(-50%, -50%);
     transition: all .5s ease-in-out;
-    display: flex;
-    align-items: center;
     z-index: 3;
     color: white;
+    
+}
+
+.iframe iframe, .iframe-filmes iframe {
+    width: 100%;
+    height: 315px;
 }
 
 .iframe.open, .iframe-filmes.open {
@@ -200,12 +323,6 @@ header nav a:hover {
     left: 50%;
 }
 
-.iframe_avatar {
-    position: relative;
-    width: 35%;
-    float: left;
-    border-right: 1px solid #F4F4F4;
-}
 
 .iframe_close {
     float: right;
@@ -213,33 +330,24 @@ header nav a:hover {
     font-size: 2.5em;
     position: absolute;
     top: 0;
-    right: 20px;
+    right: 10px;
     z-index: 3;
 
+}
+
+.iframe-info {
+    width: 100%;
 }
 
 .iframe_close:hover {
     color: var(--vermelho);
 }
 
-.iframe_avatar img {
+.trailer-iframe {
+    
     width: 100%;
-    border-radius: 50%;
-    padding: 20px;
 }
 
-.iframe_info {
-    position: relative;
-    float: right;
-    width: 65%;
-    padding: 20px;
-    text-align: justify;
-}
-
-.iframe_info p {
-    margin-bottom: 10px;
-    font-size: 90%;
-}
 
 /* Medias queries */
 
@@ -253,6 +361,10 @@ header nav a:hover {
     header .container {
         display: flex;
         flex-direction: column;
+    }
+
+    .iframe, .iframe-filmes {
+        width: 95%;
     }
 
     .filme-principal .container {
