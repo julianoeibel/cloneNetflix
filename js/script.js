@@ -24,45 +24,13 @@ $(".item-filmes").click(function() {
     $('.iframe-filmes').eq($(".item-filmes").index($(this))).toggleClass('open');
     $('.overlay').addClass('open');
 });
-/*
-$(".item-series").click(function() {
-    if ($(window).width() < 426) {
-        $('.iframe').eq($(".item-series").index($(this))-6).toggleClass('open');
-        $('.overlay').addClass('open');
-     } else if ($(window).width() < 769) {
-        $('.iframe').eq($(".item-series").index($(this))-6).toggleClass('open');
-        $('.overlay').addClass('open');
-     } else if ($(window).width() < 1025) {
-        $('.iframe').eq($(".item-series").index($(this))-6).toggleClass('open');
-        $('.overlay').addClass('open');
-     } else if ($(window).width() < 1441) {
-        $('.iframe').eq($(".item-series").index($(this))-6).toggleClass('open');
-        $('.overlay').addClass('open');
-     } else {
-        $('.iframe').eq($(".item-series").index($(this))-8).toggleClass('open');
-        $('.overlay').addClass('open');
-     }
-});
 
-$(".item-filmes").click(function() {
-    if ($(window).width() < 426) {
-        $('.iframe-filmes').eq($(".item-filmes").index($(this))-6).toggleClass('open');
-        $('.overlay').addClass('open');
-     } else if ($(window).width() < 769) {
-        $('.iframe-filmes').eq($(".item-filmes").index($(this))-6).toggleClass('open');
-        $('.overlay').addClass('open');
-     } else if ($(window).width() < 1025) {
-        $('.iframe-filmes').eq($(".item-filmes").index($(this))-6).toggleClass('open');
-        $('.overlay').addClass('open');
-     } else if ($(window).width() < 1441) {
-        $('.iframe-filmes').eq($(".item-filmes").index($(this))-6).toggleClass('open');
-        $('.overlay').addClass('open');
-     } else {
-        $('.iframe-filmes').eq($(".item-filmes").index($(this))-8).toggleClass('open');
-        $('.overlay').addClass('open');
-     }
-});
-*/
+function loading() {
+    $(window).on("load", function(){
+        $("#loader").delay(300).fadeOut("slow");
+        $(".preloader").fadeOut();
+    });
+};
 
 $('.iframe_close').on('click', function() {
     $(this).closest('.iframe').removeClass('open');
@@ -76,4 +44,3 @@ $('.overlay').on('click', function() {
     $('.overlay').removeClass('open');
     $('.menu').removeClass('open');
 });
-
