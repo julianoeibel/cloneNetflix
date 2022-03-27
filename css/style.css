@@ -276,6 +276,7 @@ header {
 .carrosel {
     padding-bottom: 40px;
     overflow: hidden;
+    display: none;
 }
 
 .carrosel-series {

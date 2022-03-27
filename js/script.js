@@ -29,6 +29,7 @@ function loading() {
     $(window).on("load", function(){
         $("#loader").delay(300).fadeOut("slow");
         $(".preloader").fadeOut();
+        $(".carrosel").css("display", "block");
     });
 };
 
