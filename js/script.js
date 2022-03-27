@@ -1,3 +1,10 @@
+$(".icon").on("click", function(){
+    $(this).toggleClass("active");
+    $('.desktop-nav').toggleClass("open");
+    $('.overlay').toggleClass("open");
+});
+
+
 $('.owl-carousel').owlCarousel({
     loop:false,
     margin:15,
@@ -52,6 +59,9 @@ $('.overlay').on('click', function() {
     $('.iframe-filmes').removeClass('open');
     $('.overlay').removeClass('open');
     $('.menu').removeClass('open');
+    $(".icon").removeClass("active");
+    $('.desktop-nav').removeClass("open");
+    $('.overlay').removeClass("open");
 });
 
 
